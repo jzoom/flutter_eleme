@@ -20,7 +20,7 @@ class _Clipper extends CustomClipper<Rect> {
 
 /// 五星评分控件
 class RatingBar extends StatelessWidget {
-  double rating;
+  final double rating;
 
   RatingBar({this.rating});
 

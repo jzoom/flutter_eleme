@@ -49,7 +49,7 @@ class RestaurantInfo {
 
   dynamic leadTime;
 
-  dynamic recent_order_num;
+  dynamic recentOrderNum;
 
   dynamic minOrderAmt;
   dynamic deliveryFee;
@@ -64,7 +64,7 @@ class RestaurantInfo {
       this.longitude,
       this.activities,
       this.rating,
-      this.recent_order_num,
+      this.recentOrderNum,
       this.leadTime,
       this.minOrderAmt,
       this.deliveryFee,
@@ -102,7 +102,7 @@ Future<List<RestaurantInfo>> getRestaurants() async {
         rating: Caster.to(data['rating'], double),
         deliveryFee: data['float_delivery_fee'],
         leadTime: data['order_lead_time'],
-        recent_order_num: data['recent_order_num'],
+        recentOrderNum: data['recent_order_num'],
         minOrderAmt: data['float_minimum_order_amount'],
         distance: formatDistance(data['distance']));
   }).toList();

@@ -18,6 +18,10 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/account.svg
+    - assets/address.svg
+    - assets/download.svg
+    - assets/filter.svg
     - assets/food.svg
     - assets/food_selected.svg
     - assets/found.svg
@@ -27,8 +31,10 @@ flutter:
     - assets/mine_selected.svg
     - assets/order.svg
     - assets/order_selected.svg
+    - assets/phone.svg
+    - assets/position.svg
     - assets/rating.svg
     - assets/rating_highlight.svg
-    - assets/position.svg
-    - assets/account.svg
-    - assets/filter.svg
+    - assets/service.svg
+    - assets/share.svg
+    - assets/shop.svg

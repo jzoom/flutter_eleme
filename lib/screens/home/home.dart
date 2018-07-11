@@ -9,8 +9,8 @@ import 'package:flutter_eleme/utils/style.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => new _HomeScreenState();
@@ -18,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 const List<String> TITLES = ["外卖", "订单", "我的"];
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomePage> {
   int _index = 0;
 
   Widget buildBody() {
@@ -68,9 +68,9 @@ const double _kPadding = 4.0;
 const double _kIconSize = 22.0;
 
 class _NavigationBar extends StatelessWidget {
-  List<Map> data;
-  int selectedIndex;
-  ValueChanged<int> onTap;
+  final List<Map> data;
+  final int selectedIndex;
+  final ValueChanged<int> onTap;
 
   _NavigationBar({this.data, this.selectedIndex, this.onTap});
 
@@ -141,8 +141,8 @@ class _NavigationBar extends StatelessWidget {
 }
 
 class _BottomIcon extends StatelessWidget {
-  String name;
-  bool selected;
+  final String name;
+  final bool selected;
 
   _BottomIcon({this.name, this.selected});
 
@@ -152,6 +152,6 @@ class _BottomIcon extends StatelessWidget {
         width: _kIconSize,
         height: _kIconSize,
         child: new SvgPicture.asset(
-            "assets/${name}${selected?"_selected":""}.svg"));
+            "assets/$name${selected?"_selected":""}.svg"));
   }
 }

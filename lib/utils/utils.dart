@@ -6,7 +6,7 @@ String hash2url(String hash) {
   String part2 = hash.substring(3);
 
   String img =
-      'https://fuss10.elemecdn.com/$part0/$part1/${part2}.jpeg%3FimageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90';
+      'https://fuss10.elemecdn.com/$part0/$part1/$part2.jpeg%3FimageMogr/format/webp/thumbnail/!90x90r/gravity/Center/crop/90x90';
 
   print(img);
 

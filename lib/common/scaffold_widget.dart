@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScaffoldWidget extends StatelessWidget {
-  Widget child;
-  Widget title;
+  final Widget child;
+  final Widget title;
 
   ScaffoldWidget({this.child, this.title});
 

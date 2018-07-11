@@ -101,7 +101,7 @@ class _Num2Double implements ValueCaster<num, double> {
   }
 }
 
-RegExp COLOR_EXP = new RegExp("[0-9a-fA-F]+");
+RegExp kColorExp = new RegExp("[0-9a-fA-F]+");
 
 class _String2Color implements ValueCaster<String, Color> {
   @override
@@ -111,7 +111,7 @@ class _String2Color implements ValueCaster<String, Color> {
     }
 
     if (value.length == 3) {
-      if (COLOR_EXP.hasMatch(value)) {
+      if (kColorExp.hasMatch(value)) {
         String realValue = "ff";
         for (int i = 0; i < 3; ++i) {
           realValue += value.substring(i, i + 1) + value.substring(i, i + 1);
@@ -119,11 +119,11 @@ class _String2Color implements ValueCaster<String, Color> {
         return new Color(int.parse(realValue, radix: 16));
       }
     } else if (value.length == 6) {
-      if (COLOR_EXP.hasMatch(value)) {
+      if (kColorExp.hasMatch(value)) {
         return new Color(int.parse("ff" + value, radix: 16));
       }
     } else if (value.length == 8) {
-      if (COLOR_EXP.hasMatch(value)) {
+      if (kColorExp.hasMatch(value)) {
         return new Color(int.parse(value, radix: 16));
       }
     }

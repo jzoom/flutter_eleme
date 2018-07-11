@@ -62,7 +62,7 @@ class _DiscountBusinessState extends State<DiscountBusiness>
   Widget build(BuildContext context) {
     final List<List<DiscountBusinessInfo>> _discountBusiness = widget.data;
     return new ConstrainedBox(
-      constraints: new BoxConstraints.loose(new Size(Layout.width, 150.0)),
+      constraints: new BoxConstraints.loose(new Size(Layout.width, 250.0)),
       child: new TabBarView(
           controller: _controller,
           children: _discountBusiness.map(_buildDiscountBusinessPage).toList()),

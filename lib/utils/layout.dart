@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+
 class Layout {
   ///这个值必须在第一个屏幕就定义好
   static double width;
@@ -18,7 +20,11 @@ class Layout {
   /// Padding SizedBox Container
   ///
   ///
-  static double rate(double value) {
+  /// fix表示固定尺寸，需要在计算比例的基础上加上这个值
+  ///
+  ///
+  ///
+  static double percent(double value,{double fix}) {
     if (value == null) return null;
     return width * value;
   }
@@ -37,8 +43,8 @@ class RatedSizedBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new SizedBox(
-      width: Layout.rate(width),
-      height: Layout.rate(height),
+      width: Layout.percent(width),
+      height: Layout.percent(height),
       child: child,
     );
   }
@@ -57,10 +63,10 @@ class RatedPadding extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Padding(
         padding: new EdgeInsets.fromLTRB(
-            Layout.rate(padding.left),
-            Layout.rate(padding.top),
-            Layout.rate(padding.right),
-            Layout.rate(padding.bottom)),
+            Layout.percent(padding.left),
+            Layout.percent(padding.top),
+            Layout.percent(padding.right),
+            Layout.percent(padding.bottom)),
         child: child);
   }
 }

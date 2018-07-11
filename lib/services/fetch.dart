@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
+
 const String kBaseUrl =
     "http://result.eolinker.com/zTpxSm31b0f0b72f3f888a54bbafc97d3f75a2a63aeaa2c?uri=http://my.com/";
 
@@ -14,5 +15,6 @@ const String kBaseUrl =
 Future<T> fetch<T>(String api) async {
   print("Start load " + api);
   http.Response response = await http.get(kBaseUrl + api);
-  return json.decode(response.body);
+  Encoding encoding = Encoding.getByName("utf-8");
+  return json.decode(encoding.decode(  response.bodyBytes));
 }

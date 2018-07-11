@@ -7,7 +7,7 @@ import 'package:flutter_eleme/widgets/rateing_bar.dart';
 
 /// 活动
 class _Activities extends StatefulWidget {
-  List<ActivityInfo> data;
+  final List<ActivityInfo> data;
 
   _Activities(this.data);
 
@@ -18,7 +18,7 @@ class _Activities extends StatefulWidget {
 }
 
 class _ActivityItem extends StatelessWidget {
-  ActivityInfo data;
+  final ActivityInfo data;
 
   _ActivityItem(this.data);
 
@@ -134,13 +134,11 @@ class _ActivitiesState extends State<_Activities>
 
 /// 美食列表项目 , 与推荐商家一样
 class RestaurantItem extends StatelessWidget {
-  RestaurantInfo info;
+  final RestaurantInfo info;
 
   RestaurantItem(this.info);
 
-  /***
-   * 活动
-   */
+  /// 商家优惠活动
   Widget buildActivities() {
     return new _Activities(info.activities);
   }
@@ -174,7 +172,7 @@ class RestaurantItem extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         new RatingBar(rating: info.rating),
-                        new Text("${info.rating} 月售${info.recent_order_num}"),
+                        new Text("${info.rating} 月售${info.recentOrderNum}"),
                       ],
                     ),
                     new Row(

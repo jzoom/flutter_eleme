@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eleme/utils/layout.dart';
-import 'package:flutter_eleme/utils/style.dart';
 import 'package:flutter_eleme/widgets/decorated_widget.dart';
 import 'dart:math' as Math;
 
@@ -28,8 +27,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 /// 0.4181818
 class TakeoutFoodHeader extends SliverPersistentHeaderDelegate {
 
+  final Key key;
 
-  TakeoutFoodHeader();
+  TakeoutFoodHeader({this.key});
 
   Widget buildSearchBar(){
     return new RatedPadding(
@@ -66,12 +66,9 @@ class TakeoutFoodHeader extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-
-
-    return new DecoratedBg(child:new SizedBox(
-
-
-
+    return new DecoratedBg(
+        key:key,
+        child:new SizedBox(
       height: Math.max( maxExtent - shrinkOffset , minExtent),
       child: new Stack(
         children: <Widget>[
@@ -98,9 +95,7 @@ class TakeoutFoodHeader extends SliverPersistentHeaderDelegate {
   }
 }
 
-/**
- * 定位
- */
+
 class PositionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
